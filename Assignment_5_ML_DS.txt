@@ -1,0 +1,350 @@
+        Assignment 5 Machine Learning (Data Science)
+
+
+Naive Approach:
+
+ 1.What is the Naive Approach in machine learning?
+ Naïve Bayes classifiers. The Naïve Bayes classifier is a supervised machine learning algorithm, which is used for classification tasks, like text classification.
+
+2. Explain the assumptions of feature independence in the Naive Approach.
+The assumption of feature independence in Naive Bayes simplifies the computation and makes the algorithm more efficient. 
+
+3. How does the Naive Approach handle missing values in the data?
+Naïve Bayes Imputation (NBI) is used to fill in missing values by replacing the attribute information according to the probability estimate.
+
+
+4. What are the advantages and disadvantages of the Naive Approach?
+Advantages
+•	This algorithm works quickly and can save a lot of time. 
+•	Naive Bayes is suitable for solving multi-class prediction problems. 
+•	If its assumption of the independence of features holds true, it can perform better than other models and requires much less training data. 
+•	Naive Bayes is better suited for categorical input variables than numerical variables.
+Disadvantages
+•	Naive Bayes assumes that all predictors (or features) are independent, rarely happening in real life. This limits the applicability of this algorithm in real-world use cases.
+•	This algorithm faces the ‘zero-frequency problem’ where it assigns zero probability to a categorical variable whose category in the test data set wasn’t available in the training dataset. It would be best if you used a smoothing technique to overcome this issue.
+•	Its estimations can be wrong in some cases, so you shouldn’t take its probability outputs very seriously. 
+•	
+
+5. Can the Naive Approach be used for regression problems? If yes, how?
+The Naive Approach is not directly suitable for regression problems because it does not consider any input variables or patterns beyond the most recent value.
+While the Naive Approach is not directly applicable to regression problems, it can be used as a baseline or a benchmark for evaluating the performance of more advanced regression models.
+
+6. How do you handle categorical features in the Naive Approach?
+
+In the Naive Approach, categorical features are typically not handled explicitly. The Naive Approach assumes that the future value will be the same as the most recent historical value, without considering the specific values or categories of the features.
+
+Categorical features, which represent qualitative variables, are not directly incorporated into the Naive Approach. Instead, this approach focuses on the most recent observed value of the target variable.
+
+7. What is Laplace smoothing and why is it used in the Naive Approach?
+ Laplace smoothing is a smoothing technique that helps tackle the problem of zero probability in the Naïve Bayes machine learning algorithm.
+
+8. How do you choose the appropriate probability threshold in the Naive Approach?
+In the Naive Approach, where the forecast is simply set equal to the most recent observed value, there is no explicit probability threshold involved. The Naive Approach does not consider probabilities or confidence levels for the forecasted values.
+
+The Naive Approach is a simplistic forecasting method that assumes the future value will be the same as the most recent historical value. As such, there is no need to choose or adjust a probability threshold when using the Naive Approach.
+
+9. Give an example scenario where the Naive Approach can be applied.
+Suppose you have a dataset of emails labeled as either "spam" or "not spam." The Naive Approach can be used to create a simple spam filter by considering only a single feature: the presence or absence of a particular keyword associated with spam.
+
+In this scenario, the Naive Approach would classify an incoming email as "spam" if the specific keyword is present in the email, and "not spam" if it is absent.
+
+While this example is highly simplistic and not as effective as advanced spam filtering techniques, it demonstrates the basic concept of the Naive Approach in spam filtration.
+
+
+KNN:
+
+10. What is the K-Nearest Neighbors (KNN) algorithm?
+The k-nearest neighbors’ algorithm, also known as KNN or k-NN, is a non-parametric, supervised learning classifier, which uses proximity to make classifications or predictions about the grouping of an individual data point.
+
+11. How does the KNN algorithm work?
+K-NN algorithm assumes the similarity between the new case/data and available cases and put the new case into the category that is most like the available categories.
+
+
+12. How do you choose the value of K in KNN?
+The choice of k will largely depend on the input data.
+
+13. What are the advantages and disadvantages of the KNN algorithm?
+    Advantages: -
+•	No Training Period- KNN modeling does not include training period as the data itself is a model which will be the reference for future prediction and because of this it is very time efficient in term of improvising for a random modeling on the available data.
+•	Easy Implementation- KNN is very easy to implement as the only thing to be calculated is the distance between different points based on data of different features and this distance can easily be calculated using distance formula such as- Euclidian or Manhattan
+•	As there is no training period thus new data can be added at any time since it won’t affect the model.
+Disadvantages:-
+•	Does not work well with large dataset as calculating distances between each data instance would be very costly.
+•	Does not work well with high dimensionality as this will complicate the distance calculating process to calculate distance for each dimension.
+•	Sensitive to noisy and missing data
+•	Feature Scaling- Data in all the dimension should be scaled (normalized and standardized) properly.
+
+14. How does the choice of distance metric affect the performance of KNN?
+ the performance of the KNN with this top performing distance degraded only ∼20% while the noise level reaches 90%, this is true for most of the distances used as well. This means that the KNN classifier using any of the top 10 distances tolerates noise to a certain degree. Moreover, the results show that some distances are less affected by the added noise comparing with other distances.
+
+15. Can KNN handle imbalanced datasets? If yes, how?
+In principle, unbalanced classes are not a problem at all for the k-nearest neighbor algorithm.
+Because the algorithm is not influenced in any way by the size of the class, it will not favor any based-on size. Try to run k-means with an obvious outlier and k+1 and you will see that most of the time the outlier will get its own class.
+Of course, with hard datasets it is always advisable to run the algorithm multiple times. This is to avoid trouble due to a bad initialization.
+
+16. How do you handle categorical features in KNN?
+KNN doesn't handle categorical features. This is a fundamental weakness of kNN. kNN doesn't work great in general when features are on different scales. This is especially true when one of the 'scales' is a category label. You must decide how to convert categorical features to a numeric scale, and somehow assign inter-category distances in a way that makes sense with other features (like, age-age distances...but what is an age-category distance?).
+
+
+17. What are some techniques for improving the efficiency of KNN?
+•	Ball Tree: 
+•	KD-Tree:
+•	Approximate Nearest Neighbor (ANN) Search: 
+•	Distance Metrics Optimization: 
+•	Dimensionality Reduction: 
+•	Data Preprocessing: 
+•	Parallelization:
+
+18. Give an example scenario where KNN can be applied.
+Suppose you are working on a customer segmentation task for a retail company. You have a dataset with customer information such as age, gender, income, and purchase history. The goal is to group customers into segments based on their similarities.
+
+In this scenario, KNN can be used for customer segmentation. By calculating the distances between customers based on their features, KNN can identify the K nearest neighbors to each customer. The majority class or average value of the neighbors' attributes can be used to assign a segment label to the customer.
+
+For instance, if a new customer comes in and their attributes closely match those of customers in the "high-income, frequent shopper" segment, KNN would assign them to that segment. Similarly, customers with similar attributes would be grouped together, enabling targeted marketing strategies, personalized recommendations, or tailored customer experiences.
+
+
+Clustering:
+
+19. What is clustering in machine learning?
+Clustering in machine learning is an unsupervised learning technique that involves grouping similar data points together based on their inherent characteristics or patterns.
+
+20. Explain the difference between hierarchical clustering and k-means clustering.
+1.	K-Means is that it needs us to pre-enter the number of clusters (K)   .              Hierarchical clustering has no such requirements. The algorithm on itself deduces the optimum number of cluster and displays it form of dendrogram. 
+
+2.	Performance of K-Means on spherical data is better than that of HCA.
+
+3.	Hierarchical clustering is a purely agglomerative approach and goes on to build one giant cluster.                                                                                                                          K-Means algorithm in all its iterations has same number of clusters.
+4.	K-Means need circular data,                                                                                         while Hierarchical clustering has no such requirement.
+
+5.	K-Means uses median or mean to compute centroid for representing cluster                while HCA has various linkage method that may or may not employ the centroid.
+
+6.	With introduction of mini batches K-Means can work with very large datasets but HCA lacks in this regard.
+
+7.	Hierarchical methods are suited for cases which require arrangement of the clusters into a natural hierarchy.                                                                                                            In K-means all clusters are on same level i.e. similar WCSS or cohesiveness.
+
+8.	HCA can produce reproducible results while                                                                  older versions of K-Means can’t.
+
+9.	K-Means simply divides data into mutually exclusive subsets while HCA arranges it into a tree format.
+
+21. How do you determine the optimal number of clusters in k-means clustering?
+simply calculating the silhouette coefficient over a range of k, & identifying the peak as optimum K
+
+22. What are some common distance metrics used in clustering?
+The four types of distance metrics are
+1.	Euclidean Distance,
+2.	Manhattan Distance,
+3.	Minkowski Distance,
+4.	and Hamming Distance.
+
+23. How do you handle categorical features in clustering?
+   Step 1: Pick K observations at random and use them as leaders/clusters.
+
+  Step 2: Calculate the dissimilarities (no. of mismatches) and assign each observation to its        closest cluster.
+
+Step 3: Define new modes for the clusters.
+ Step4: Creating Toy Dataset.
+
+
+24. What are the advantages and disadvantages of hierarchical clustering?
+Advantages of Hierarchical Clustering:
+•	We can obtain the optimal number of clusters from the model itself, human intervention not required.
+•	Dendrograms help us in clear visualization, which is practical and easy to understand.
+Disadvantages of Hierarchical Clustering:
+•	Not suitable for large datasets due to high time and space complexity.
+•	There is no mathematical objective for Hierarchical clustering.
+•	All the approaches to calculate the similarity between clusters has their own disadvantages.
+
+25. Explain the concept of silhouette score and its interpretation in clustering.
+The silhouette value is a measure of how similar an object is to its own cluster (cohesion) compared to other clusters (separation). The silhouette ranges from −1 to +1, where a high value indicates that the object is well matched to its own cluster and poorly matched to neighboring clusters.
+
+26. Give an example scenario where clustering can be applied.
+Example : Streaming Services
+Streaming services often use clustering analysis to identify viewers who have similar behavior.
+For example, a streaming service may collect the following data about individuals:
+•	Minutes watched per day
+•	Total viewing sessions per week
+•	Number of unique shows viewed per month
+•	
+Using these metrics, a streaming service can perform cluster analysis to identify high usage and low usage users so that they can know who they should spend most of their advertising dollar on.
+
+Anomaly Detection:
+
+27. What is anomaly detection in machine learning?
+Anomaly detection is a process of finding those rare items, data points, events, or observations that make suspicions by being different from the rest data points or observations. Anomaly detection is also known as outlier detection.
+
+28. Explain the difference between supervised and unsupervised anomaly detection.
+supervised approach makes use of predefined algorithms and AI training, 
+while unsupervised approach uses a general outlier-detection mechanism based on pattern matching.
+
+29. What are some common techniques used for anomaly detection?
+1)Statistical Methods
+2)Machine Learning Algorithms
+3)Density-Based Methods
+4)Distance-Based Methods
+5)Clustering Techniques
+6)Time-Series Anomaly Detection Techniques
+7)Ensemble Methods
+
+30. How does the One-Class SVM algorithm work for anomaly detection?
+The algorithm tries to separate data from the origin in the transformed high-dimensional predictor space. One-Class SVM finds the decision boundary based on the primal form of SVM with the Gaussian kernel approximation method.
+
+31. How do you choose the appropriate threshold for anomaly detection?
+For Anomaly detection threshold, choose the number to use for the anomaly detection threshold.
+
+32. How do you handle imbalanced datasets in anomaly detection?
+
+33. Give an example scenario where anomaly detection can be applied.
+
+Suppose you are working in a cybersecurity company, and your task is to detect network intrusions or malicious activities. Anomaly detection techniques can be employed to identify unusual network traffic patterns that deviate from normal behavior. By monitoring network traffic data and analyzing various features such as packet sizes, protocols, source/destination IP addresses, and communication patterns, you can build an anomaly detection system.
+
+In this scenario, the anomaly detection system can help in flagging potential cyber-attacks, unauthorized access attempts, or abnormal activities within the network. By leveraging techniques like statistical methods, machine learning algorithms, or time-series analysis, the system can learn patterns of normal network behavior and identify any deviations or anomalies in real-time. This allows for early detection and timely response to potential security breaches, reducing the risk of data breaches, system compromises, or other malicious activities.
+
+
+Dimension Reduction:
+
+34. What is dimension reduction in machine learning?
+Dimensionality reduction is the task of reducing the number of features in a dataset.
+
+35. Explain the difference between feature selection and feature extraction.
+The main difference between them is that feature selection is about selecting the subset of the original feature set, whereas feature extraction creates new features. 
+
+36. How does Principal Component Analysis (PCA) work for dimension reduction?
+The goal of PCA is to reduce the dimensionality of the original feature space by projecting it onto a smaller subspace, where the eigenvectors will form the axes. However, the eigenvectors only define the directions of the new axis, since they all have the same unit length 1.
+
+37. How do you choose the number of components in PCA?
+If our sole intention of doing PCA is for data visualization, the best number of components is 2 or 3.
+
+38. What are some other dimension reduction techniques besides PCA?
+
+1)Linear Discriminant Analysis (LDA)
+
+2)Independent Component Analysis (ICA)
+
+3)t-Distributed Stochastic Neighbor Embedding (t-SNE)
+
+4)Autoencoders (Neural Network-based dimensionality reduction)
+
+5)Factor Analysis
+
+6)Non-Negative Matrix Factorization (NMF)
+
+7)Random Projection
+
+8)Multidimensional Scaling (MDS)
+
+9)Locally Linear Embedding (LLE)
+
+10) Isomap (Isometric Feature Mapping)
+
+
+39. Give an example scenario where dimension reduction can be applied.
+One example scenario where dimensionality reduction can be applied is in image recognition or computer vision tasks.
+
+Consider a dataset of images containing thousands of pixels per image. Each pixel can be considered as a feature, resulting in a high-dimensional feature space. However, not all pixels contribute equally to the overall image content or contain relevant information for the task at hand.
+
+Feature Selection:
+
+40. What is feature selection in machine learning?
+Feature Selection is the method of reducing the input variable to your model by using only relevant data and getting rid of noise in data.
+
+41. Explain the difference between filter, wrapper, and embedded methods of feature selection.
+Filter methods perform the feature selection independently of construction of the classification model. 
+Wrapper methods iteratively select or eliminate a set of features using the prediction accuracy of the classification model.
+ In embedded methods the feature selection is an integral part of the classification model.
+
+42. How does correlation-based feature selection work?
+ Features with high correlation are more linearly dependent and hence have almost the same effect on the dependent variable.
+
+43. How do you handle multicollinearity in feature selection?
+To address multicollinearity, techniques such as regularization or feature selection can be applied to select a subset of independent variables that are not highly correlated with each other.
+
+44. What are some common feature selection metrics?
+•	Chi-square Test. 
+•	Fisher's Score. 
+•	Correlation Coefficient
+•	Dispersion Ratio
+•	Backward Feature Elimination
+•	Recursive Feature Elimination
+•	Random Forest Importance.
+
+
+45. Give an example scenario where feature selection can be applied.
+Suppose you are working on a classification problem to predict whether a credit card transaction is fraudulent or not. You have a dataset with various features such as transaction amount, location, time, type of vendor, customer demographics, etc. However, not all features may be equally important or relevant for predicting fraud.
+
+In this scenario, feature selection can be applied to identify the subset of features that have the most significant impact on fraud prediction. By selecting the most informative features, you can potentially improve the model's accuracy, reduce training time, and simplify the model's complexity.
+
+Data Drift Detection:
+
+46. What is data drift in machine learning?
+For machine learning models, data drift is the change in model input data that leads to model performance degradation.
+
+47. Why is data drift detection important?
+It is important to take steps to prevent or mitigate their effects. Some strategies for addressing drift include continuously monitoring and evaluating the performance of a model, updating the model with new data, and using machine learning models that are more robust to drift.
+
+48. Explain the difference between concept drift and feature drift.
+Design occurs at the concept level, whereas features build on top of concepts.
+Concept drift is a type of model drift where the properties of the dependent variable changes. 
+Feature suggests an outstanding or marked property that attracts attention.
+
+49. What are some techniques used for detecting data drift?
+Population Stability Index,
+ KL Divergence, 
+JS Divergence, KS Test, 
+and the Wasserstein Metric.
+
+50. How can you handle data drift in a machine learning model?
+
+1. Check the data quality
+2. Investigate the drift
+3. Do nothing
+4. Retrain it, if you can
+5. Calibrate or rebuild the model
+6. Pause the model and use a fallback
+7. Find the low-performing segments
+8. Apply business logic on top of the model
+
+
+
+Data Leakage:
+
+51. What is data leakage in machine learning?
+ Data leakage can be defined as: "A scenario when ML model already has information of test      data in training data, but this information would not be available at the time of prediction, called data leakage.
+
+52. Why is data leakage a concern?
+ It causes high performance while training set but perform poorly in deployment or production.
+
+53. Explain the difference between target leakage and train-test contamination.
+Target leakage 
+It can happen when a variable that is not a feature is being used to predict the target. 
+
+train-test contamination.
+This happens when we unknowingly or subtly pass information from our train dataset to our validation dataset.
+
+54. How can you identify and prevent data leakage in a machine learning pipeline?
+One of the best ways to get rid of data leakage is to perform k-fold cross validation where the overall data is divided into k parts. After dividing into k parts, we use each part as the cross-validation data and the remaining as training data.
+
+55. What are some common sources of data leakage?
+Performing some kind of pre-processing on the full dataset whose results influence what is seen during training is one of the most common causes of data leakage.
+
+56. Give an example scenario where data leakage can occur.
+ An example of leaking could be attempting to forecast whether a customer visiting a bank’s website will open an account. If the user’s record includes an account number field, it may be blank for users who are still browsing the site, but it will be filled in after the user creates an account. Clearly, the user account field is not a viable feature to use in this situation, as it may not be available while the user is still browsing the site.
+
+
+Cross Validation:
+
+57. What is cross-validation in machine learning?
+
+Cross-validation is a technique for evaluating ML models by training several ML models on subsets of the available input data and evaluating them on the complementary subset of the data. Use cross-validation to detect overfitting
+
+58. Why is cross-validation important?
+
+The main advantage of cross-validation is that it provides an estimate of the performance of the model on new data, which is important for assessing the model's generalizability.
+
+59. Explain the difference between k-fold cross-validation and stratified k-fold cross-validation.
+
+K Fold divides the dataset into k folds.
+Stratified ensures that each fold of dataset has the same proportion of observations with a given label.
+
+60. How do you interpret the cross-validation results?
+
+Interpreting cross-validation results involves assessing the mean performance, variance, bias, overfitting, and using them to make informed decisions about model selection, hyperparameter tuning, and improving the overall performance and generalization of the model.
