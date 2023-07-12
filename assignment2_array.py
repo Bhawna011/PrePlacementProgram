@@ -8,13 +8,13 @@
 # time complexity = O(nlogn)
 # space complexity  = O(1)
 
-# def pairSum(nums):
+def pairSum(nums):
 
-#         nums.sort()
-#         return sum(nums[::2])
-# nums = [1,4,3,2]  
-# result=pairSum(nums)
-# print(result)    
+        nums.sort()
+        return sum(nums[::2])
+nums = [1,4,3,2]  
+result=pairSum(nums)
+ print(result)    
 
 # Question 2
 # Alice has n candies, where the ith candy is of type candyType[i]. Alice noticed that she started to gain weight, so she visited a doctor. 
@@ -30,14 +30,14 @@
 # time complexity = O(n)
 # space complexity = O(n)
 
-# def maxUniqueCandies(candyType):
-#     max_candies = len(candyType) // 2
-#     unique_candies = set(candyType)
-#     return min(max_candies, len(unique_candies))
+def maxUniqueCandies(candyType):
+    max_candies = len(candyType) // 2
+    unique_candies = set(candyType)
+    return min(max_candies, len(unique_candies))
 
-# candyType = [1, 1, 2, 2, 3, 3]
-# result = maxUniqueCandies(candyType)
-# print(result)
+candyType = [1, 1, 2, 2, 3, 3]
+result = maxUniqueCandies(candyType)
+print(result)
 
 
 # Question 3
@@ -56,26 +56,26 @@
 #  time complexity = O(n log n)
 # space complexity = O(1)
 
-# def findLHS(nums):
-#         nums.sort()
-#         left =0
-#         right =1
-#         ans = 0 
-#         while right < len(nums):
-#             diff = nums[right] - nums[left]
-#             if diff == 1: 
-#                 ans = max(ans, right - left + 1)
+def findLHS(nums):
+        nums.sort()
+        left =0
+        right =1
+        ans = 0 
+        while right < len(nums):
+            diff = nums[right] - nums[left]
+            if diff == 1: 
+                ans = max(ans, right - left + 1)
         
-#             elif diff <= 1:
-#                 right=right+1
+            elif diff <= 1:
+                right=right+1
             
-#             else:
-#                 left=left+1
+            else:
+                left=left+1
         
-#         return ans
-# nums = [1,3,2,2,5,2,3,7]
-# result=findLHS(nums)
-# print("result is ",result)
+        return ans
+nums = [1,3,2,2,5,2,3,7]
+result=findLHS(nums)
+print("result is ",result)
 
 # Question 4
 # You have a long flowerbed in which some of the plots are planted, and some are not.
@@ -118,13 +118,13 @@ print(result)
 # time complexity =O(n log n)
 # space complexity = O(1)
 
-# def maxProduct(nums):
-#     nums.sort()
-#     return max(nums[-1] * nums[-2] * nums[-3], nums[0] * nums[1] * nums[-1])
+def maxProduct(nums):
+    nums.sort()
+    return max(nums[-1] * nums[-2] * nums[-3], nums[0] * nums[1] * nums[-1])
 
-# nums = [1, 2, 3]
-# result = maxProduct(nums)
-# print(result)
+nums = [1, 2, 3]
+result = maxProduct(nums)
+print(result)
 
 # Question 6
 # Given an array of integers nums which is sorted in ascending order, and an integer target,
